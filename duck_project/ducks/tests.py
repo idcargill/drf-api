@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from ducks.models import DuckModel
+from .models import DuckModel
 
 class TestDuck(TestCase):
 
