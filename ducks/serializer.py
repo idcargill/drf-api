@@ -3,5 +3,5 @@ from .models import DuckModel
 
 class DuckSerializer(serializers.ModelSerializer):
   class Meta:
-    fields  = ('name', 'description', 'species', 'age')
+    fields  = ('id', 'owner','name', 'description', 'species', 'age')
     model   = DuckModel
