@@ -11,7 +11,7 @@ class Species(models.TextChoices):
   MAGPIE          = 'Magpie'
 
 class DuckModel(models.Model):
-  owner           = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=True, null=True)
+  owner           = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
   name            = models.CharField(max_length=30)
   description     = models.TextField(default='')
   species         = models.CharField(choices=Species.choices, max_length=60)
@@ -19,4 +19,6 @@ class DuckModel(models.Model):
 
   
   def __str__(self):
-    return f'{self.id} {self.name} {self.owner}'
+    return f'{self.id} {self.species} {self.name}    Owner: {self.owner}'
+
+
